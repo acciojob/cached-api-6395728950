@@ -16,16 +16,16 @@ const App = () => {
   },[])
   console.log("what is in input",input);
    const filterData = useMemo(()=>{
-     if(userId<1  || userId>10){
-         return input;
-     }
-        return input.filter((item)=>item.userId==userId);
+    //  if(userId<1  || userId>10){
+    //      return input;
+    //  }
+        return input.filter((item)=>item.userId===parseInt(userId));
    },[userId,input]);
   return (
     <div>
       <input type="text" value={userId} onChange={(e)=>setId(e.target.value)}></input>
         {
-          loading ? <p>Loading...</p> :(
+          loading ? (<p>Loading...</p>) :(
              <ul>
               {
                 filterData.map((item,index)=>(
