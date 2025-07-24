@@ -16,9 +16,9 @@ const App = () => {
   },[])
   console.log("what is in input",input);
    const filterData = useMemo(()=>{
-    //  if(userId<1  || userId>10){
-    //      return input;
-    //  }
+     if(userId<1  || userId>10){
+         return input;
+     }
         return input.filter((item)=>item.userId===parseInt(userId));
    },[userId,input]);
   return (
@@ -28,8 +28,8 @@ const App = () => {
           loading ? (<p>Loading...</p>) :(
              <ul>
               {
-                filterData.map((item,index)=>(
-                   <li key={index}>
+                filterData.map((item)=>(
+                   <li key={item.id}>
                     <h4>{item.title}</h4>
                     <p>{item.body}</p>
                    </li>
