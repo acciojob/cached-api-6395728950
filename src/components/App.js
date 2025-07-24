@@ -30,7 +30,7 @@ const App = () => {
               {
                 filterData.map((item,index)=>(
                    <li key={index}>
-                    <h1>{item.title}</h1>
+                    <h4>{item.title}</h4>
                     <p>{item.body}</p>
                    </li>
                 ))
